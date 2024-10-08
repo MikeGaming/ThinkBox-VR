@@ -28,11 +28,17 @@ public class MessageListener : MonoBehaviour
         Debug.Log(success ? "Device connected" : "Device disconnected");
     }
 
-    void SendColourData(int led, int colour)
+    public void SendColourData(int led)
     {
         //1 = red, 2 = green, 3 = blue
-        string message = "" + led + colour;
+        int message = led;
         Debug.Log("Sending: " + message);
-        controller.SendSerialMessage(message);
+        controller.SendSerialMessage(message.ToString());
+    }
+
+    public void SendTextData(string text)
+    {
+        Debug.Log("Sending: " + text);
+        controller.SendSerialMessage(text);
     }
 }
