@@ -23,7 +23,7 @@ void setup()
   lcd.setCursor(3,0);
   lcd.print("Welcome to");
   lcd.setCursor(3,1);
-  lcd.print("NextMind !");
+  lcd.print("ThinkBox !");
 
   for(int i = 0; i < 6; i++)
   {
