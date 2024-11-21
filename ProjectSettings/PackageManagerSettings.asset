@@ -33,22 +33,30 @@ MonoBehaviour:
     m_IsDefault: 0
     m_Capabilities: 0
     m_ConfigSource: 4
-  m_UserSelectedRegistryName: NextMind
+  - m_Id: scoped:project:VIVE
+    m_Name: VIVE
+    m_Url: https://npm-registry.vive.com
+    m_Scopes:
+    - com.htc.upm
+    m_IsDefault: 0
+    m_Capabilities: 0
+    m_ConfigSource: 4
+  m_UserSelectedRegistryName: VIVE
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_ErrorMessage: 
     m_Original:
-      m_Id: scoped:project:NextMind
-      m_Name: NextMind
-      m_Url: http://registry.npmjs.com
+      m_Id: scoped:project:VIVE
+      m_Name: VIVE
+      m_Url: https://npm-registry.vive.com
       m_Scopes:
-      - com.nextmind.unitysdk
+      - com.htc.upm
       m_IsDefault: 0
       m_Capabilities: 0
       m_ConfigSource: 4
     m_Modified: 0
-    m_Name: NextMind
-    m_Url: http://registry.npmjs.com
+    m_Name: VIVE
+    m_Url: https://npm-registry.vive.com
     m_Scopes:
-    - com.nextmind.unitysdk
+    - com.htc.upm
     m_SelectedScopeIndex: 0
