@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/XR_Test.unity
-    guid: 7a156671501453642a6c9b2388db1aac
-  - enabled: 1
-    path: Assets/Scenes/Hub.unity
+    path: Assets/Samples/NextMind SDK/1.5.1/Examples/Hub.unity
     guid: be272fb300a5f3544b9889b8a052ba4e
+  - enabled: 1
+    path: Assets/Samples/NextMind SDK/1.5.1/Examples/Hub_VR.unity
+    guid: 282181e38ebf2d64e98ded67e2c52942
+  - enabled: 1
+    path: Assets/Samples/NextMind SDK/1.5.1/Examples/Calibration/Calibration_VR.unity
+    guid: a280f6b773e0fe94cae0ed20d6eab244
+  - enabled: 1
+    path: Assets/Samples/NextMind SDK/1.5.1/Examples/SDKDiscovery/SDKDiscovery_VR.unity
+    guid: 8e71a1ff046200b468f6c7425bbbb159
   - enabled: 1
     path: Assets/Samples/NextMind SDK/1.5.1/Examples/Calibration/Calibration.unity
     guid: 7ca228870b8a84b409095067aeb1296f
@@ -20,11 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Samples/NextMind SDK/1.5.1/Examples/SDKDiscovery/SDKDiscovery.unity
     guid: d45fe7d03f5903e45802ee75a10c3b95
-  - enabled: 1
-    path: Assets/Scenes/TestingScene.unity
-    guid: 483dfd9088375b94380a7c4999c98acb
   m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4b5cd4af273a52c45901c21fd4d37c09,
-      type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e7eb3f51a29dee747b4cbeb6f4dc6f6f,
-      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: af83932b55557cc42ba299a7c05eda0a, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 21a432fddab871b4fa89ad818a224fa9, type: 2}
