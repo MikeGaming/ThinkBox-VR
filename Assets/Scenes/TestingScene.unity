@@ -218,6 +218,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomUITag (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642118327}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendTextData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MessageListener, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
 --- !u!224 &64175246 stripped
@@ -351,6 +383,22 @@ PrefabInstance:
       propertyPath: m_Text
       value: NO
       objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
 --- !u!224 &104468771 stripped
@@ -452,6 +500,38 @@ PrefabInstance:
     - target: {fileID: 6756826170014103379, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
       propertyPath: m_Name
       value: CustomUITag (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642118327}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendTextData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MessageListener, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
@@ -576,6 +656,38 @@ PrefabInstance:
     - target: {fileID: 6756826170014103379, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
       propertyPath: m_Name
       value: CustomUITag (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642118327}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendTextData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MessageListener, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
@@ -758,6 +870,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomUITag (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642118327}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendTextData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MessageListener, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
 --- !u!224 &309688256 stripped
@@ -832,7 +976,7 @@ MonoBehaviour:
   - CAT
   - DOG
   - PLANE
-  - BITCH
+  - BEACH
   padText2:
   - 1
   - 2
@@ -892,6 +1036,10 @@ PrefabInstance:
     - target: {fileID: 405068, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
+      propertyPath: baudRate
+      value: 9600
       objectReference: {fileID: 0}
     - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: portName
@@ -1202,6 +1350,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomUITag
       objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642118327}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendTextData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MessageListener, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
 --- !u!224 &1225586651 stripped
@@ -1334,6 +1534,22 @@ PrefabInstance:
     - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
       propertyPath: m_Text
       value: IDK
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
@@ -1484,6 +1700,22 @@ PrefabInstance:
     - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
       propertyPath: m_Text
       value: Swap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
@@ -1645,6 +1877,22 @@ PrefabInstance:
       propertyPath: m_Text
       value: YES
       objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
 --- !u!224 &1471160732 stripped
@@ -1800,8 +2048,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectedDeviceStatus
       objectReference: {fileID: 0}
+    - target: {fileID: 5296961324257766924, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324257766924, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324257766924, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324257766924, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5296961324510970306, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324579907234, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324579907234, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324579907234, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296961324579907234, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5296961324579907235, guid: 19db330840e4298489b4d8d95fa44c11, type: 3}
@@ -2028,8 +2308,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5772243408818577054, guid: e2403c56af46d314fbc68b86f62a1315, type: 3}
+      propertyPath: configuration.simulateFocus
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772243408818577054, guid: e2403c56af46d314fbc68b86f62a1315, type: 3}
       propertyPath: configuration.simulateDevice
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5772243408818577057, guid: e2403c56af46d314fbc68b86f62a1315, type: 3}
       propertyPath: m_Name
@@ -2131,6 +2415,38 @@ PrefabInstance:
     - target: {fileID: 6756826170014103379, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
       propertyPath: m_Name
       value: CustomUITag (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642118327}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendTextData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MessageListener, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756826170014103381, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: onTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507977376210158683, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ae9145e964b2c43a1840932b13d185, type: 3}

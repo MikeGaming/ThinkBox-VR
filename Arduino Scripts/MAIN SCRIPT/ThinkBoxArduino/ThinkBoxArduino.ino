@@ -9,7 +9,7 @@ unsigned long last_time = 0;
 LiquidCrystal_I2C lcd(0x27,20,4);
 
 int padIndex = 0;
-String padText1[6] = {"SNAKE","BIRD","CAT","DOG","PLANE","BITCH"};
+String padText1[6] = {"SNAKE","BIRD","CAT","DOG","PLANE","BEACH"};
 String padText2[6] = {"1","2","3","4","5","6"};
 String padText3[6] = {"HELLO","BYE","THANKS","WOW","COOL","BRUH"};
 String currentPadText[6] = {"TEXT1","TEXT2","TEXT3","TEXT4","TEXT5","TEXT6"};
