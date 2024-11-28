@@ -76,7 +76,7 @@ void loop()
       break;
     case 't':
       padIndex++;
-      if(padIndex >= 3) padIndex = 0;
+      if(padIndex > 2) padIndex = 0;
       Serial.println(padIndex);
       break;
     case '1':

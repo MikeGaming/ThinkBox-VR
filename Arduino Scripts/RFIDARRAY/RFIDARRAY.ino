@@ -113,8 +113,8 @@ void loop() {
   {
     nuidPICC[i] = rfid.uid.uidByte[i];
   }
-  printHex(rfid.uid.uidByte, rfid.uid.size);
-  Serial.println();
+  //printHex(rfid.uid.uidByte, rfid.uid.size);
+  //Serial.println();
   rfid.PICC_HaltA();
   rfid.PCD_StopCrypto1();
   //RFID
@@ -123,29 +123,32 @@ void loop() {
   if(rfid.uid.uidByte[1] == knownKeys[0][1])
   {
     ChangeSymbol(Snake);
-    Serial.print("WORKED");
+    Serial.println("Snake");
   }
   else if(rfid.uid.uidByte[1] == knownKeys[1][1])
   {
     ChangeSymbol(Turtle);
-    Serial.print("WORKED2");
+    Serial.println("Turtle");
   }
   else if(rfid.uid.uidByte[1] == knownKeys[2][1])
   {
     ChangeSymbol(Snail);
-    Serial.print("WORKED3");
+    Serial.println("Snail");
   }
   else if(rfid.uid.uidByte[1] == knownKeys[3][1])
   {
     ChangeSymbol(Fox);
+    Serial.println("Fox");
   }
   else if(rfid.uid.uidByte[1] == knownKeys[4][1])
   {
     ChangeSymbol(Chicken);
+    Serial.println("Chicken");
   }
   else if(rfid.uid.uidByte[1] == knownKeys[5][1])
   {
     ChangeSymbol(Cat);
+    Serial.println("Cat");
   }
   //LED ARRAY CHANGING
   FastLED.show();
@@ -154,14 +157,14 @@ void loop() {
 
 
 
-void printHex(byte *buffer, byte bufferSize)
+/*void printHex(byte *buffer, byte bufferSize)
 {
   for (byte i = 0; i < bufferSize; i++)
   {
     Serial.print(buffer[i] < 0x10 ? " 0" : " ");
     Serial.print(buffer[i], HEX);
   }
-}
+}*/
 
 
 void ChangeSymbol(int symbol[NUM_LEDS][3])

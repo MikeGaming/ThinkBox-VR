@@ -24,7 +24,7 @@ public class TagSelection : MonoBehaviour
         }
         else
         {
-            selectImage.color = Color.white;
+            selectImage.color = Color.black;
         }
     }
 }

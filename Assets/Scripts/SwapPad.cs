@@ -8,6 +8,7 @@ public class SwapPad : MonoBehaviour
 
     [SerializeField] string[] padText1 = new string[6];
     [SerializeField] string[] padText2 = new string[6];
+    [SerializeField] GameObject padText2Objects;
     [SerializeField] string[] padText3 = new string[6];
     string[] currentPadText;
 
@@ -32,14 +33,18 @@ public class SwapPad : MonoBehaviour
         {
             case 0:
                 currentPadText = padText1;
+                padText2Objects.SetActive(false);
                 break;
 
             case 1:
                 currentPadText = padText2;
+                padText2Objects.SetActive(true);
+                padText2Objects.GetComponent<SymbolInput>().ResetText();
                 break;
             
             case 2:
                 currentPadText = padText3;
+                padText2Objects.SetActive(false);
                 break;
 
         }
