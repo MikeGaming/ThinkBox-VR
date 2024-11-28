@@ -10,8 +10,8 @@ SNAKE 04 D0 B0 18 6F 61 80
 //RFID
 #include <SPI.h>
 #include <MFRC522.h>
-#define SS_PIN 10
-#define RST_PIN 9
+#define SS_PIN 53
+#define RST_PIN 5
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 MFRC522::MIFARE_Key key; 
 // Init array that will store new NUID 
@@ -32,7 +32,7 @@ byte knownKeys[NR_KNOWN_KEYS][10] =  {
 //LED ARRAY
 #include <FastLED.h>
 #define NUM_LEDS 64
-#define DATA_PIN 9
+#define DATA_PIN 10
 CRGB leds[NUM_LEDS];
 int Snake [64][3]{{0, 0, 0}, {106, 190, 48}, {0, 0, 0}, {106, 190, 48}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, 
 {106, 190, 48}, {95, 12, 12}, {106, 190, 48}, {95, 12, 12}, {106, 190, 48}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, 
@@ -95,7 +95,9 @@ void setup() {
   //RFID
 
   //LED ARRAY
-  FastLED.addLeds<WS2812,DATA_PIN,GRB>(leds,NUM_LEDS);
+  FastLED.addLeds<WS2812B,DATA_PIN,GRB>(leds,NUM_LEDS).setRgbw(RgbwDefault());
+  FastLED.setBrightness(64);
+  FastLED.show();
   //LED ARRAY
  
 }
@@ -118,34 +120,35 @@ void loop() {
   //RFID
 
   //LED ARRAY CHANGING
-  if(rfid.uid.uidByte[1] == knownKeys[0][2])
+  if(rfid.uid.uidByte[1] == knownKeys[0][1])
   {
     ChangeSymbol(Snake);
     Serial.print("WORKED");
   }
-  else if(rfid.uid.uidByte[1] == knownKeys[1][2])
+  else if(rfid.uid.uidByte[1] == knownKeys[1][1])
   {
     ChangeSymbol(Turtle);
     Serial.print("WORKED2");
   }
-  else if(rfid.uid.uidByte[1] == knownKeys[2][2])
+  else if(rfid.uid.uidByte[1] == knownKeys[2][1])
   {
     ChangeSymbol(Snail);
     Serial.print("WORKED3");
   }
-  else if(rfid.uid.uidByte[1] == knownKeys[3][2])
+  else if(rfid.uid.uidByte[1] == knownKeys[3][1])
   {
     ChangeSymbol(Fox);
   }
-  else if(rfid.uid.uidByte[1] == knownKeys[4][2])
+  else if(rfid.uid.uidByte[1] == knownKeys[4][1])
   {
     ChangeSymbol(Chicken);
   }
-  else if(rfid.uid.uidByte[1] == knownKeys[5][2])
+  else if(rfid.uid.uidByte[1] == knownKeys[5][1])
   {
     ChangeSymbol(Cat);
   }
   //LED ARRAY CHANGING
+  FastLED.show();
   delay(500);
 }
 
@@ -165,7 +168,6 @@ void ChangeSymbol(int symbol[NUM_LEDS][3])
 {
   for (int i=0;i<NUM_LEDS;i++)
   {
-    leds[i]=CRGB(symbol[i]);
+    leds[i]=CRGB(symbol[i][0], symbol[i][1], symbol[i][2]);
   }
-    FastLED.show();
 }
