@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CubeController : MonoBehaviour
 {
-    [SerializeField] MessageListener messageListener;
+    [SerializeField] MessageController messageListener;
+
+    [HideInInspector] public string lastMessage_array;
 
     [SerializeField] Texture Snake, Turtle, Snail, Fox, Chicken, Cat;
     [SerializeField] RawImage animalImage;
@@ -28,18 +29,25 @@ public class CubeController : MonoBehaviour
             buttons[i].GetComponent<MeshRenderer>().materials[0].color = color;
             s += r;
         }
-        messageListener.SendTextData("$" + s);
+        StartCoroutine(SendText("$" + s));
+    }
+
+    IEnumerator SendText(string text)
+    {
+        yield return new WaitForSeconds(1.5f);
+        messageListener.SendTextData(text);
+        StopAllCoroutines();
     }
 
 
     private void Update()
     {
-        if (messageListener.lastMessage == "Snake") animalImage.texture = Snake;
-        else if (messageListener.lastMessage == "Turtle") animalImage.texture = Turtle;
-        else if (messageListener.lastMessage == "Snail") animalImage.texture = Snail;
-        else if (messageListener.lastMessage == "Fox") animalImage.texture = Fox;
-        else if (messageListener.lastMessage == "Chicken") animalImage.texture = Chicken;
-        else if (messageListener.lastMessage == "Cat") animalImage.texture = Cat;
+        //Debug.Log(messageListener.lastMessage);
+        if (lastMessage_array == "Snake") animalImage.texture = Snake;
+        else if (lastMessage_array == "Snail") animalImage.texture = Snail;
+        else if (lastMessage_array == "Fox") animalImage.texture = Fox;
+        else if (lastMessage_array == "Chicken") animalImage.texture = Chicken;
+        else if (lastMessage_array == "Cat") animalImage.texture = Cat;
 
 
     }

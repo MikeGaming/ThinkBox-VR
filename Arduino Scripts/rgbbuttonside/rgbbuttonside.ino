@@ -120,7 +120,7 @@ void loop()
 
   if(sequence_RGB == currentInput_RGB && !RGBSolved){
     RGBSolved = true;
-    Serial.println("$solved");
+    Serial.println("#s");
     for(int i = 0; i < 6; i++){
       RGB_LEDS[i].SetSolved();
     }

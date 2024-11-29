@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LEDARRAY : MonoBehaviour
 {
 
-    [SerializeField] MessageListener messageListener;
+    [SerializeField] MessageController messageListener;
 
     private void Start()
     {
-        messageListener.SendTextData("%");
+        messageListener.SendTextData("");
     }
 }

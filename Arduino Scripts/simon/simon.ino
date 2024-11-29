@@ -4,13 +4,13 @@
 //
 
 #define NUM_LEDS_SIMON 4
-#define LED_PIN_SIMON 10
+#define LED_PIN_SIMON 2
 CRGB leds_simon[NUM_LEDS_SIMON];
 
-#define _button1Pin 8
-#define _button2Pin 7
-#define _button3Pin 6
-#define _button4Pin 5
+#define _button1Pin 7 
+#define _button2Pin 6
+#define _button3Pin 5
+#define _button4Pin 4
 
 bool simonSolved = false;
 //sequence must be defined here.
@@ -39,7 +39,7 @@ void loop()
     
     if(sequence_simon == currentInput_simon){
       simonSolved = true;
-      Serial.println("#solved");
+      Serial.println("#s");
       leds_simon[0] = CRGB(0, 255, 0);
       leds_simon[1] = CRGB(0, 255, 0);
       leds_simon[2] = CRGB(0, 255, 0);
@@ -54,7 +54,7 @@ void loop()
     if(digitalRead(_button1Pin) == HIGH){
       currentInput_simon += '1';
       //replace next with LED array change
-      leds_simon[0]=CRGB(255, 255, 255);
+      leds_simon[1]=CRGB(255, 255, 255);
       FastLED.show();
       Serial.println("alert1");
       delay(250);
@@ -63,7 +63,7 @@ void loop()
     if(digitalRead(_button2Pin) == HIGH){
       currentInput_simon += '2';
       //replace next with LED array change
-      leds_simon[1]=CRGB(255, 255, 255);
+      leds_simon[0]=CRGB(255, 255, 255);
       FastLED.show();
       Serial.println("alert2");
       delay(250);
@@ -72,7 +72,7 @@ void loop()
     if(digitalRead(_button3Pin) == HIGH){
       currentInput_simon += '3';
       //replace next with LED array change
-      leds_simon[2]=CRGB(255, 255, 255);
+      leds_simon[3]=CRGB(255, 255, 255);
       FastLED.show();
       Serial.println("alert3");
       delay(250);
@@ -81,7 +81,7 @@ void loop()
     if(digitalRead(_button4Pin) == HIGH){
       currentInput_simon += '4';
       //replace next with LED array change
-      leds_simon[3]=CRGB(255, 255, 255);
+      leds_simon[2]=CRGB(255, 255, 255);
       FastLED.show();
       Serial.println("alert4");
       delay(250);
@@ -98,7 +98,7 @@ void ReadSerialData(){
     
     //simon says prefix: #
     if(readData.startsWith("#")){
-      sequence_simon = readData.substring(1);
+      sequence_simon = readData.substring(1, 5);
       sequence_simon.trim();
       Serial.println(sequence_simon);
     }
