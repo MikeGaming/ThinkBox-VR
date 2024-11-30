@@ -96,7 +96,20 @@ bool readyToWin;
 
 
 
+#define NUM_LEDS_SIMON 4
+#define LED_PIN_SIMON 2
+CRGB leds_simon[NUM_LEDS_SIMON];
 
+#define _button1Pin 7 
+#define _button2Pin 6
+#define _button3Pin 5
+#define _button4Pin 4
+
+bool simonSolved = false;
+//sequence must be defined here.
+//it is impossible for the sequence to be solved with values above 4
+String sequence_simon = "5555";
+String currentInput_simon = "";
 
 
 
@@ -106,9 +119,6 @@ bool readyToWin;
 
 
 #include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-
-#include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 
 unsigned long last_time = 0;
@@ -125,7 +135,12 @@ String currentPadText[6] = {"TEXT1","TEXT2","TEXT3","TEXT4","TEXT5","TEXT6"};
 void setup()
 {
 
-
+FastLED.addLeds<WS2812B,LED_PIN_SIMON,GRB>(leds_simon,NUM_LEDS_SIMON);
+  
+  pinMode(_button1Pin, INPUT);
+  pinMode(_button2Pin, INPUT);
+  pinMode(_button3Pin, INPUT);
+  pinMode(_button4Pin, INPUT);
 
 
 
@@ -162,7 +177,6 @@ void setup()
 
 
 
-  Serial.begin(9600);
   lcd.init();
   lcd.backlight();
   lcd.setCursor(3,0);
@@ -175,9 +189,16 @@ void setup()
     currentPadText[i] = padText1[i];
   }
 }
-
+bool solved_rfid;
 void loop()
 {
+  ReadSerialData();
+
+
+
+
+
+
 
   // Print a heartbeat
   if (millis() > last_time + 20000)
@@ -208,42 +229,211 @@ void loop()
       break;
   }
 
-  switch(Serial.read())
-  {
-    case 'y':
-      LCDPrint("YES");
-      break;
-    case 'n':
-      LCDPrint("NO");
-      break;
-    case 'm':
-      LCDPrint("IDK");
-      break;
-    case 't':
-      padIndex++;
-      if(padIndex > 2) padIndex = 0;
-      Serial.println(padIndex);
-      break;
-    case '1':
-      LCDPrint(currentPadText[0]);
-      break;
-    case '2':
-      LCDPrint(currentPadText[1]);
-      break;
-    case '3':
-      LCDPrint(currentPadText[2]);
-      break;
-    case '4':
-      LCDPrint(currentPadText[3]);
-      break;
-    case '5':
-      LCDPrint(currentPadText[4]);
-      break;
-    case '6':
-      LCDPrint(currentPadText[5]);
-      break;
+  
+  if(sequence_simon.length() == currentInput_simon.length() && !simonSolved){
+    Serial.println("Alert6");
+    
+    if(sequence_simon == currentInput_simon){
+      simonSolved = true;
+      Serial.println("#s");
+      leds_simon[0] = CRGB(0, 255, 0);
+      leds_simon[1] = CRGB(0, 255, 0);
+      leds_simon[2] = CRGB(0, 255, 0);
+      leds_simon[3] = CRGB(0, 255, 0);
+      FastLED.show();
+    }else{
+      ResetSimon();
+    }
   }
+  
+  if(!simonSolved){
+    if(digitalRead(_button1Pin) == HIGH){
+      currentInput_simon += '1';
+      //replace next with LED array change
+      leds_simon[1]=CRGB(255, 255, 255);
+      FastLED.show();
+      Serial.println("alert1");
+      delay(250);
+    }
 
+    if(digitalRead(_button2Pin) == HIGH){
+      currentInput_simon += '2';
+      //replace next with LED array change
+      leds_simon[0]=CRGB(255, 255, 255);
+      FastLED.show();
+      Serial.println("alert2");
+      delay(250);
+    }
+
+    if(digitalRead(_button3Pin) == HIGH){
+      currentInput_simon += '3';
+      //replace next with LED array change
+      leds_simon[3]=CRGB(255, 255, 255);
+      FastLED.show();
+      Serial.println("alert3");
+      delay(250);
+    }
+
+    if(digitalRead(_button4Pin) == HIGH){
+      currentInput_simon += '4';
+      //replace next with LED array change
+      leds_simon[2]=CRGB(255, 255, 255);
+      FastLED.show();
+      Serial.println("alert4");
+      delay(250);
+    }
+  }  
+
+if (!solved_rfid)
+  {
+    if (readyToWin && digitalRead(BUTTON_PIN_ARRAY) == HIGH)
+    {
+      Serial.println("#s");
+      readyToWin = false;
+      solved_rfid = true;
+      for (int i=0;i<NUM_LEDS_ARRAY;i++)
+      {
+        leds[i] = CRGB(0, 255, 0);
+      }
+      FastLED.show();
+    }
+
+    //RFID
+    // Look for new cards
+    if ( ! rfid.PICC_IsNewCardPresent()) return;
+    // Verify if the NUID has been readed
+    if ( ! rfid.PICC_ReadCardSerial()) return;
+    for (byte i = 0; i < 4; i++)
+    {
+      nuidPICC[i] = rfid.uid.uidByte[i];
+    }
+    //printHex(rfid.uid.uidByte, rfid.uid.size);
+    //Serial.println();
+    rfid.PICC_HaltA();
+    rfid.PCD_StopCrypto1();
+    //RFID
+
+    Serial.println("%" + rfid.uid.uidByte[1]);
+    if(rfid.uid.uidByte[1] == knownKeys[currentKey][1])
+    {
+      readyToWin = true;
+      Serial.println("ready to win");
+    }
+
+    if(rfid.uid.uidByte[1] == knownKeys[0][1])
+    {
+      Serial.println("%Snake");
+    }
+    else if(rfid.uid.uidByte[1] == knownKeys[1][1])
+    {
+      Serial.println("%Turtle");
+    }
+    else if(rfid.uid.uidByte[1] == knownKeys[2][1])
+    {
+      Serial.println("%Snail");
+    }
+    else if(rfid.uid.uidByte[1] == knownKeys[3][1])
+    {
+      Serial.println("%Fox");
+    }
+    else if(rfid.uid.uidByte[1] == knownKeys[4][1])
+    {
+      Serial.println("%Chicken");
+    }
+    else if(rfid.uid.uidByte[1] == knownKeys[5][1])
+    {
+      Serial.println("%Cat");
+    }
+
+    delay(500);
+  }
+}
+
+String readData = "";
+
+void ReadSerialData(){
+  //reading data from unity for dynamic changes
+  if (Serial.available() > 0) {
+    readData = Serial.readString();
+    
+    //simon says prefix: #
+    if(readData.startsWith("#")){
+      sequence_simon = readData.substring(1, 5);
+      sequence_simon.trim();
+      Serial.println(sequence_simon);
+    }
+    
+    //RGB prefix: $
+    if(readData.startsWith("$")){
+      //do stuff
+    }
+    
+    //RFID prefix: %
+    if(readData.startsWith("%")){
+      //do stuff
+    }
+
+    if(readData.startsWith("*"))
+    {
+      if(readData.substring(1, 2) == "y")
+      {
+        LCDPrint("YES");
+        Serial.println(readData.substring(1, 1));
+      }
+      else if(readData.substring(1, 2) == "m")
+      {
+        LCDPrint("IDK");
+      }
+      else if(readData.substring(1, 2) == "n")
+      {
+        LCDPrint("NO");
+      }
+      else if(readData.substring(1, 2) == "t")
+      {
+        padIndex++;
+        if(padIndex > 2) padIndex = 0;
+        Serial.println(padIndex);
+      }
+      else if(readData.substring(1, 2) == "1")
+      {
+        LCDPrint(currentPadText[0]);
+      }
+      else if(readData.substring(1, 2) == "2")
+      {
+        LCDPrint(currentPadText[1]);
+      }
+      else if(readData.substring(1, 2) == "3")
+      {
+        LCDPrint(currentPadText[2]);
+      }
+      else if(readData.substring(1, 2) == "4")
+      {
+        LCDPrint(currentPadText[3]);
+      }
+      else if(readData.substring(1, 2) == "5")
+      {
+        LCDPrint(currentPadText[4]);
+      }
+      else if(readData.substring(1, 2) == "6")
+      {
+        LCDPrint(currentPadText[5]);
+      }
+      
+    }
+
+    Serial.flush();
+  }
+}
+
+  void ResetSimon(){
+  //replace next with LED array change
+  leds_simon[0]=CRGB(0);
+  leds_simon[1]=CRGB(0);
+  leds_simon[2]=CRGB(0);
+  leds_simon[3]=CRGB(0);
+  FastLED.show();
+
+  currentInput_simon = "";
 }
 
 void LCDPrint(String text) 
@@ -253,3 +443,10 @@ void LCDPrint(String text)
   lcd.print(text);
 }
 
+void ChangeSymbol(int symbol[NUM_LEDS_ARRAY][3])
+{
+  for (int i=0;i<NUM_LEDS_ARRAY;i++)
+  {
+    leds[i]=CRGB(symbol[i][0], symbol[i][1], symbol[i][2]);
+  }
+}

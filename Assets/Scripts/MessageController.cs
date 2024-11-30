@@ -51,6 +51,6 @@ public class MessageController : MonoBehaviour
     public void SendTextData(string texts)
     {
         Debug.Log("Sending: " + texts);
-        controller.SendSerialMessage(texts + "\n");
+        controller.SendSerialMessage(texts);
     }
 }

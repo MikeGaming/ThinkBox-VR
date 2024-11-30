@@ -44,6 +44,7 @@ public class CubeController : MonoBehaviour
     {
         //Debug.Log(messageListener.lastMessage);
         if (lastMessage_array == "Snake") animalImage.texture = Snake;
+        else if (lastMessage_array == "Turtle") animalImage.texture = Turtle;
         else if (lastMessage_array == "Snail") animalImage.texture = Snail;
         else if (lastMessage_array == "Fox") animalImage.texture = Fox;
         else if (lastMessage_array == "Chicken") animalImage.texture = Chicken;

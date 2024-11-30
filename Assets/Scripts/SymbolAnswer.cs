@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SymbolAnswer : MonoBehaviour
 {
     int[] symbolOrder = new int[4] { 5, 5, 5, 5 };
-    List<int> symbolNumbers = Enumerable.Range(1, 4).ToList();
+    List<int> symbolNumbers = new List<int> { 1, 2, 4, 4 };
     List<int> symbolOrderNumbers = Enumerable.Range(1, 4).ToList();
     [SerializeField] MessageController messageListener;
     [HideInInspector] public string lastMessage_symbol;
