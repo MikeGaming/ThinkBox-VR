@@ -203,7 +203,7 @@ void ReadSerialData(){
     //RGB prefix: $
     if(readData.startsWith("$")){
       //do stuff
-      sequence_RGB = readData.substring(1);
+      sequence_RGB = readData.substring(1, 7);
       
       sequence_RGB.trim();
       Serial.println(sequence_RGB);
