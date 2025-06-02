@@ -155,8 +155,9 @@ private:
     currentInput_RGB[selfIndex] = String(state)[0];
     leds_rgb[selfIndex] = CRGB(r, g, b);
     FastLED.show();
-    Serial.println(currentInput_RGB);
-    Serial.println(sequence_RGB);
+    Serial.println("$" + currentInput_RGB);
+    //Serial.println(sequence_RGB);
+
   }
 
   void SetSolved(){
@@ -305,7 +306,7 @@ void loop()
   //RGB BUTTON
 if(sequence_RGB == currentInput_RGB && !RGBSolved){
     RGBSolved = true;
-    Serial.println("#s");
+    Serial.println("$s");
     for(int i = 0; i < 6; i++){
       RGB_LEDS[i].SetSolved();
     }
@@ -543,7 +544,6 @@ void ReadSerialData(){
     //RGB prefix: $
     if(readData.startsWith("$")){
       sequence_RGB = readData.substring(1, 7);
-      
       sequence_RGB.trim();
       Serial.println(sequence_RGB);
     }

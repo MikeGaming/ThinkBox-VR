@@ -34,7 +34,7 @@ public class CubeController : MonoBehaviour
 
     IEnumerator SendText(string text)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(5f);
         messageListener.SendTextData(text);
         StopAllCoroutines();
     }
