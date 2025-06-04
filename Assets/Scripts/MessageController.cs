@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Globalization;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine;
 public class MessageController : MonoBehaviour
 {
 
@@ -44,6 +47,14 @@ public class MessageController : MonoBehaviour
             message.Trim();
             message = message.Substring(1);
             symbolAnswer.lastMessage_symbol = message;
+            Debug.Log("Arrived: " + message);
+        }
+        if (message.StartsWith("&"))
+        {
+            message = message.Substring(1);
+            var strings = message.Split(",");
+            strings.ToList();
+            cubeController.quaternion = new Vector4(float.Parse(strings[0], CultureInfo.InvariantCulture.NumberFormat), float.Parse(strings[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(strings[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(strings[3], CultureInfo.InvariantCulture.NumberFormat));
             Debug.Log("Arrived: " + message);
         }
     }

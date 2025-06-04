@@ -8,6 +8,10 @@ public class CubeController : MonoBehaviour
 
     [HideInInspector] public string lastMessage_array;
 
+    public GameObject obj;
+
+    [HideInInspector] public Vector4 quaternion;
+
     [SerializeField] Texture Snake, Turtle, Snail, Fox, Chicken, Cat;
     [SerializeField] RawImage animalImage;
 
@@ -50,6 +54,6 @@ public class CubeController : MonoBehaviour
         else if (lastMessage_array == "Chicken") animalImage.texture = Chicken;
         else if (lastMessage_array == "Cat") animalImage.texture = Cat;
 
-
+        obj.transform.rotation = new Quaternion(quaternion.w, quaternion.x, quaternion.z, quaternion.y);
     }
 }

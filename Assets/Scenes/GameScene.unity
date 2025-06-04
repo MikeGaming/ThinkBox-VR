@@ -2202,7 +2202,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690195393}
-  m_LocalRotation: {x: 0.38268274, y: -0, z: -0, w: 0.9238798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -2211,7 +2211,7 @@ Transform:
   - {fileID: 371497349}
   m_Father: {fileID: 1421651855}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &690195399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,6 +2226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageListener: {fileID: 1175695526}
   lastMessage_array: 
+  obj: {fileID: 1421651853}
+  quaternion: {x: 0, y: 0, z: 0, w: 0}
   Snake: {fileID: 2800000, guid: c2a88e7401540c64f8510ea075ac70d6, type: 3}
   Turtle: {fileID: 2800000, guid: 960dada3884cf404889ab73646a55b5a, type: 3}
   Snail: {fileID: 2800000, guid: 282d549d28891b64d8c863c9f6fb1136, type: 3}
@@ -3961,7 +3963,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421651855}
-  - component: {fileID: 1421651854}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3969,20 +3970,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1421651854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421651853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc562b447b3634045b60c1479cee97ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHandTrans: {fileID: 958135088}
-  rightHandTrans: {fileID: 1452948433}
 --- !u!4 &1421651855
 Transform:
   m_ObjectHideFlags: 0
