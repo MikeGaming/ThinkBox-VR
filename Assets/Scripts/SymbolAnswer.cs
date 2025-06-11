@@ -8,12 +8,15 @@ using UnityEngine.UI;
 public class SymbolAnswer : MonoBehaviour
 {
     int[] symbolOrder = new int[4] { 5, 5, 5, 5 };
-    List<int> symbolNumbers = new List<int> { 1, 2, 4, 4 };
+    List<int> symbolNumbers = new List<int> { 1, 2, 3, 4 };
     List<int> symbolOrderNumbers = Enumerable.Range(1, 4).ToList();
     [SerializeField] MessageController messageListener;
+    [SerializeField] GameObject[] symbols;
     [HideInInspector] public string lastMessage_symbol;
+    [HideInInspector] public string solved;
     [SerializeField] Text[] symbolAnswerTexts = new Text[4];
     bool triggered;
+    int n = 0;
     int r;
 
     void Start()
@@ -51,19 +54,24 @@ public class SymbolAnswer : MonoBehaviour
     }
     void Update()
     {
-        if (lastMessage_symbol == "s" && !triggered && symbolOrderNumbers.Count != 0)
+        if (lastMessage_symbol == "s" && n < 2 && symbolOrderNumbers.Count != 0)
         {
-            triggered = true;
             r = symbolOrderNumbers.OrderBy(bn => Guid.NewGuid()).FirstOrDefault();
             symbolAnswerTexts[r - 1].gameObject.SetActive(true);
             symbolOrderNumbers.Remove(r);
             r = symbolOrderNumbers.OrderBy(bn => Guid.NewGuid()).FirstOrDefault();
             symbolAnswerTexts[r - 1].gameObject.SetActive(true);
             symbolOrderNumbers.Remove(r);
+            lastMessage_symbol = "";
+            n++;
         }
-        else if (lastMessage_symbol != "s")
+
+        if (solved == "s")
         {
-            triggered = false;
+            symbols[0].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            symbols[1].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            symbols[2].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            symbols[3].GetComponent<Image>().color = Color.green;
         }
     }
 }

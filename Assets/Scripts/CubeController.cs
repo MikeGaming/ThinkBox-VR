@@ -7,12 +7,13 @@ public class CubeController : MonoBehaviour
     [SerializeField] MessageController messageListener;
 
     [HideInInspector] public string lastMessage_array;
+    [HideInInspector] public string rgbSolved;
 
     public GameObject obj;
 
     [HideInInspector] public Vector4 quaternion;
 
-    [SerializeField] Texture Snake, Turtle, Snail, Fox, Chicken, Cat;
+    [SerializeField] Texture Snake, Turtle, Snail, Fox, Chicken, Cat, Green;
     [SerializeField] RawImage animalImage;
 
     [SerializeField] GameObject[] buttons;
@@ -55,5 +56,20 @@ public class CubeController : MonoBehaviour
         else if (lastMessage_array == "Cat") animalImage.texture = Cat;
 
         obj.transform.rotation = new Quaternion(quaternion.w, quaternion.x, quaternion.z, quaternion.y);
+
+        if (rgbSolved == "s")
+        {
+            buttons[0].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            buttons[1].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            buttons[2].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            buttons[3].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            buttons[4].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            buttons[5].GetComponent<MeshRenderer>().materials[0].color = Color.green;
+        }
+
+        if (lastMessage_array == "s")
+        {
+            animalImage.texture = Green;
+        }
     }
 }

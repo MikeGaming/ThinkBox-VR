@@ -2226,6 +2226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageListener: {fileID: 1175695526}
   lastMessage_array: 
+  rgbSolved: 
   obj: {fileID: 1421651853}
   quaternion: {x: 0, y: 0, z: 0, w: 0}
   Snake: {fileID: 2800000, guid: c2a88e7401540c64f8510ea075ac70d6, type: 3}
@@ -2234,14 +2235,15 @@ MonoBehaviour:
   Fox: {fileID: 2800000, guid: 2ab9e45f1e42f2842b3c39a620827831, type: 3}
   Chicken: {fileID: 2800000, guid: d3907a651e8cbaa46a1eb11f8f79d3df, type: 3}
   Cat: {fileID: 2800000, guid: 9fec2be8b51c54a4fb5cba51b47dfef9, type: 3}
+  Green: {fileID: 2800000, guid: 28169d45b4df15d4280f4545e33a9994, type: 3}
   animalImage: {fileID: 128717975}
   buttons:
-  - {fileID: 1336401680}
   - {fileID: 298582451}
-  - {fileID: 532393751}
+  - {fileID: 1336401680}
   - {fileID: 1958063589}
-  - {fileID: 691986787}
+  - {fileID: 532393751}
   - {fileID: 1704819863}
+  - {fileID: 691986787}
 --- !u!1 &691986787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,7 +4650,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageListener: {fileID: 1175695526}
+  symbols:
+  - {fileID: 715116739}
+  - {fileID: 366083316}
+  - {fileID: 1292722875}
+  - {fileID: 508280994}
   lastMessage_symbol: 
+  solved: 
   symbolAnswerTexts:
   - {fileID: 395285631}
   - {fileID: 545170628}
@@ -4799,8 +4807,8 @@ Camera:
   m_GameObject: {fileID: 1547770705}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

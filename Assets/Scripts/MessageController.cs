@@ -55,6 +55,20 @@ public class MessageController : MonoBehaviour
             var strings = message.Split(",");
             strings.ToList();
             cubeController.quaternion = new Vector4(float.Parse(strings[0], CultureInfo.InvariantCulture.NumberFormat), float.Parse(strings[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(strings[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(strings[3], CultureInfo.InvariantCulture.NumberFormat));
+            //Debug.Log("Arrived: " + message);
+        }
+        if (message.StartsWith("$"))
+        {
+            message.Trim();
+            message = message.Substring(1);
+            cubeController.rgbSolved = message;
+            Debug.Log("Arrived: " + message);
+        }
+        if (message.StartsWith("!"))
+        {
+            message.Trim();
+            message = message.Substring(1);
+            symbolAnswer.solved = message;
             Debug.Log("Arrived: " + message);
         }
     }

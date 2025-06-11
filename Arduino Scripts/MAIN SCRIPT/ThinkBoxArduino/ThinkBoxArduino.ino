@@ -42,7 +42,7 @@ MPU6050 mpu;
 
 #define OUTPUT_READABLE_QUATERNION
 
-#define INTERRUPT_PIN 2  // use pin 2 on Arduino Uno & most boards
+#define INTERRUPT_PIN 0  // use pin 2 on Arduino Uno & most boards
 
 // MPU control/status vars
 bool dmpReady = false;  // set true if DMP init was successful
@@ -196,16 +196,17 @@ private:
         break;
     }
 
+
+    currentInput_RGB[selfIndex] = String(state)[0];
+    leds_rgb[selfIndex] = CRGB(r, g, b);
+    FastLED.show();
+    
     state++;
 
     if(state > 2){
       state = 0;
     }
-
-    currentInput_RGB[selfIndex] = String(state)[0];
-    leds_rgb[selfIndex] = CRGB(r, g, b);
-    FastLED.show();
-    Serial.println("$" + currentInput_RGB);
+    //Serial.println("$" + currentInput_RGB);
     //Serial.println(sequence_RGB);
 
   }
@@ -384,9 +385,9 @@ void setup()
         // 1 = initial memory load failed
         // 2 = DMP configuration updates failed
         // (if it's going to break, usually the code will be 1)
-        Serial.print(F("DMP Initialization failed (code "));
-        Serial.print(devStatus);
-        Serial.println(F(")"));
+        //Serial.print(F("DMP Initialization failed (code "));
+        //Serial.print(devStatus);
+        //Serial.println(F(")"));
     }
 
   //GYRO
@@ -451,6 +452,7 @@ void loop()
   //RGB BUTTON
 if(sequence_RGB == currentInput_RGB && !RGBSolved){
     RGBSolved = true;
+    Serial.println("#s");
     Serial.println("$s");
     for(int i = 0; i < 6; i++){
       RGB_LEDS[i].SetSolved();
@@ -554,11 +556,11 @@ if(sequence_RGB == currentInput_RGB && !RGBSolved){
 
   
   if(sequence_simon.length() == currentInput_simon.length() && !simonSolved){
-    Serial.println("Alert6");
+    //Serial.println("Alert6");
     
     if(sequence_simon == currentInput_simon){
       simonSolved = true;
-      Serial.println("#s");
+      Serial.println("!s");
       leds_simon[0] = CRGB(0, 255, 0);
       leds_simon[1] = CRGB(0, 255, 0);
       leds_simon[2] = CRGB(0, 255, 0);
@@ -612,6 +614,7 @@ if (!solved_rfid)
     if (readyToWin && digitalRead(BUTTON_PIN_ARRAY) == HIGH)
     {
       Serial.println("#s");
+      Serial.println("%s");
       readyToWin = false;
       solved_rfid = true;
       for (int i=0;i<NUM_LEDS_ARRAY;i++)
