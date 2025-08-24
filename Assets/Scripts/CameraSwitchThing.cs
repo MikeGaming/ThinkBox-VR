@@ -7,7 +7,7 @@ public class CameraSwitchThing : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ChangeRenderEye());
+        //StartCoroutine(ChangeRenderEye());
     }
 
     IEnumerator ChangeRenderEye()

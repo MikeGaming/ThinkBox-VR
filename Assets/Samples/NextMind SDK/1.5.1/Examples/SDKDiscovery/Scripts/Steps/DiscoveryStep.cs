@@ -75,7 +75,7 @@ namespace NextMind.Examples.Discovery
 
             // Reset rigidbody's physics values.
             strength = 0;
-            rigidBody.velocity = Vector3.zero;
+            rigidBody.linearVelocity = Vector3.zero;
             rigidBody.angularVelocity = Vector3.zero;
 
             // Reset transform to the right position.
