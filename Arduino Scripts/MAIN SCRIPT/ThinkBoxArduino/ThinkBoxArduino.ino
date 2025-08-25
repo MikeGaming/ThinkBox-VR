@@ -271,7 +271,6 @@ unsigned long last_time = 0;
 
 LiquidCrystal_I2C lcd(0x27,20,4);
 
-int padIndex = 0;
 String padText1[6] = {"SNAKE","TURTLE","SNAIL","FOX","CHICKEN","CAT"};
 String padText2[6] = {"TRIANGLE","CIRCLE","SQUARE","DIAMOND","",""};
 String padText3[6] = {"RED","BLUE","PURPLE","","",""};
@@ -421,11 +420,6 @@ void setup()
   lcd.print("Welcome to");
   lcd.setCursor(3,1);
   lcd.print("ThinkBox !");
-
-  for(int i = 0; i < 6; i++)
-  {
-    currentPadText[i] = padText1[i];
-  }
 }
 bool solved_rfid;
 void loop()
@@ -530,28 +524,6 @@ if(sequence_RGB == currentInput_RGB && !RGBSolved){
   {
     Serial.println("Arduino is alive!!");
     last_time = millis();
-  }
-
-  switch(padIndex)
-  {
-    case 0:
-      for(int i = 0; i < 6; i++)
-      {
-        currentPadText[i] = padText1[i];
-      }
-      break;
-    case 1:
-      for(int i = 0; i < 6; i++)
-      {
-        currentPadText[i] = padText2[i];
-      }
-      break;
-    case 2:
-      for(int i = 0; i < 6; i++)
-      {
-        currentPadText[i] = padText3[i];
-      }
-      break;
   }
 
   
@@ -703,48 +675,9 @@ void ReadSerialData(){
 
     if(readData.startsWith("*"))
     {
-      if(readData.substring(1, 2) == "y")
+      if(readData.substring(1, 2) == "d")
       {
-        LCDPrint("YES");
-        Serial.println(readData.substring(1, 1));
-      }
-      else if(readData.substring(1, 2) == "m")
-      {
-        LCDPrint("IDK");
-      }
-      else if(readData.substring(1, 2) == "n")
-      {
-        LCDPrint("NO");
-      }
-      else if(readData.substring(1, 2) == "t")
-      {
-        padIndex++;
-        if(padIndex > 2) padIndex = 0;
-        Serial.println(padIndex);
-      }
-      else if(readData.substring(1, 2) == "1")
-      {
-        LCDPrint(currentPadText[0]);
-      }
-      else if(readData.substring(1, 2) == "2")
-      {
-        LCDPrint(currentPadText[1]);
-      }
-      else if(readData.substring(1, 2) == "3")
-      {
-        LCDPrint(currentPadText[2]);
-      }
-      else if(readData.substring(1, 2) == "4")
-      {
-        LCDPrint(currentPadText[3]);
-      }
-      else if(readData.substring(1, 2) == "5")
-      {
-        LCDPrint(currentPadText[4]);
-      }
-      else if(readData.substring(1, 2) == "6")
-      {
-        LCDPrint(currentPadText[5]);
+        LCDPrint(readData.substring(5,readData.substring(2,5).toInt()));
       }
       
     }

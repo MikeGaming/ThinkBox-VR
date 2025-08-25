@@ -78,4 +78,10 @@ public class MessageController : MonoBehaviour
         Debug.Log("Sending: " + texts);
         controller.SendSerialMessage(texts);
     }
+
+    public void SendDisplayText(string texts)
+    {
+        Debug.Log("Sending display text: " + texts);
+        controller.SendSerialMessage("*d" + (texts.Length + 5).ToString("D3") + texts);
+    }
 }
