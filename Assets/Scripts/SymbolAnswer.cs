@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class SymbolAnswer : MonoBehaviour
     [SerializeField] GameObject[] symbols;
     [HideInInspector] public string lastMessage_symbol;
     [HideInInspector] public string solved;
-    [SerializeField] Text[] symbolAnswerTexts = new Text[4];
+    [SerializeField] TextMeshProUGUI[] symbolAnswerTexts = new TextMeshProUGUI[4];
     bool triggered;
     int n = 0;
     int r;
@@ -54,6 +55,11 @@ public class SymbolAnswer : MonoBehaviour
     }
     void Update()
     {
+        if (lastMessage_symbol == "s")
+        {
+
+            Debug.Log("Triggered");
+        }
         if (lastMessage_symbol == "s" && n < 2 && symbolOrderNumbers.Count != 0)
         {
             r = symbolOrderNumbers.OrderBy(bn => Guid.NewGuid()).FirstOrDefault();
@@ -71,7 +77,7 @@ public class SymbolAnswer : MonoBehaviour
             symbols[0].GetComponent<MeshRenderer>().materials[0].color = Color.green;
             symbols[1].GetComponent<MeshRenderer>().materials[0].color = Color.green;
             symbols[2].GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            symbols[3].GetComponent<Image>().color = Color.green;
+            symbols[3].GetComponent<RawImage>().color = Color.green;
         }
     }
 }
