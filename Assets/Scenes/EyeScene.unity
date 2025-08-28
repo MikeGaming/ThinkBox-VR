@@ -7442,6 +7442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftEye: {fileID: 1925667256}
   rightEye: {fileID: 1345429985}
+  selectionDuration: 1.25
 --- !u!4 &1316297170
 Transform:
   m_ObjectHideFlags: 0

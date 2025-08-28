@@ -12,6 +12,8 @@ public class CubeController : MonoBehaviour
     public GameObject obj;
 
     [HideInInspector] public Vector4 quaternion;
+    private Vector4 smoothedQuaternion;
+    [SerializeField, Range(0f, 1f)] private float smoothingFactor = 0.1f;
 
     [SerializeField] Texture Snake, Turtle, Snail, Fox, Chicken, Cat, Green;
     [SerializeField] RawImage animalImage;
@@ -35,6 +37,7 @@ public class CubeController : MonoBehaviour
             s += r;
         }
         StartCoroutine(SendText("$" + s));
+        smoothedQuaternion = quaternion;
     }
 
     IEnumerator SendText(string text)
@@ -55,7 +58,8 @@ public class CubeController : MonoBehaviour
         else if (lastMessage_array == "Chicken") animalImage.texture = Chicken;
         else if (lastMessage_array == "Cat") animalImage.texture = Cat;
 
-        obj.transform.rotation = new Quaternion(quaternion.w, quaternion.x, quaternion.z, quaternion.y);
+        smoothedQuaternion = Vector4.Lerp(smoothedQuaternion, quaternion, smoothingFactor);
+        obj.transform.rotation = new Quaternion(smoothedQuaternion.w, smoothedQuaternion.x, smoothedQuaternion.z, smoothedQuaternion.y);
 
         if (rgbSolved == "s")
         {

@@ -8,7 +8,7 @@ public class EyeSelectionManager : MonoBehaviour
     private float selectionTimer = 0f;
     private GameObject previousSelection;
     private GameObject currentCandidate;
-    private const float selectionDuration = 1f;
+    [SerializeField] float selectionDuration = 2f;
 
     private void Update()
     {
